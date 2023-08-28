@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <title>User Registration</title>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body style="
+background: burlywood;
+">
+    <div class="container">
+        <div class="center">
+            <div style="
+            border: solid;
+            box-shadow: 0px 1px 11px 0px;
+        " class="card text-center">
+                <div class="card-header">
+                    <h5 class="card-title">User Registration</h5>
+                </div>
+                <div  class="card-body">
+                    <img src="{% static 'images/photo.jpg' %}" class="img-fluid rounded-circle mb-3" alt="Profile Photo" style="width: 200px; height: 200px;">
+                    <p class="card-text">Please select the type of registration:</p>
+                    <div style="
+                    width: 449px;" class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <a href="doctor_r" class="btn btn-primary btn-lg btn-block">Doctor</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="patient_r" class="btn btn-primary btn-lg btn-block">Patient</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

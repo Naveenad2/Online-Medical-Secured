@@ -1,0 +1,92 @@
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            font-size: 18px;
+            padding: 10px 30px;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Edit Profile details</h1>
+        
+        <form action="/editDoctor" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{user.doctor_name}}">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{user.email}}">
+              
+            </div>
+            
+            <div class="form-group">
+                <label for="department">Specialization:</label>
+                <input type="text" id="department" name="Specialization" value="{{user.specialization}}">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="pno" value="{{user.phoneno}}">
+            </div>
+            <div class="form-group">
+                <label for="phone"> Age:</label>
+                <input type="number" id="phone" name="age" value="{{user.age}}">
+            </div>
+            <div class="form-group">
+                <label for="phone">Qualification:</label>
+                <input type="text" id="phone" name="Qualification" value="{{user.qualification}}">
+            </div>
+            <div class="form-group">
+                <label for="phone">Hospital:</label>
+                <input type="text" id="phone" name="Hospital" value="{{user.hospital}}">
+            </div>
+            
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    {% endblock content %}

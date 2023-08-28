@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            color: #007bff;
+            text-align: center;
+        }
+        
+        .employee-card {
+            background-color: #fff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .employee-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .employee-details {
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .employee-details span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .employee-details .label {
+            font-weight: bold;
+        }
+        
+        .employee-details .value {
+            color: #333;
+        }
+        
+        .view-profile-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>View All Doctors</h1>
+
+        {% for user in doctor %}
+        
+        <div class="employee-card">
+            <div class="employee-name">{{user.doctor_name}}</div>
+            <div class="employee-details">
+                <span class="label">Email:</span>
+                <span class="value">{{user.email}}</span>
+                <span class="label"> Specialization:</span>
+                <span class="value">{{user.specialization}}</span>
+                <span class="label">Phone Number:</span>
+                <span class="value">{{user.phoneno}}</span>
+                <span class="label">Hospital:</span>
+                <span class="value">{{user.hospital}}</span>
+                <span class="label">Qualification:</span>
+                <span class="value">{{user.qualification}}</span>
+            </div>
+           <a href="doctorCosult/{{user.id}}"> <button class="view-profile-btn">Consult this doctor</button></a>
+        </div>
+        
+       {% endfor %}
+        <!-- Add more employee cards as needed -->
+        
+    </div>
+
+    {% endblock content %}

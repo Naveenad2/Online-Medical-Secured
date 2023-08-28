@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Card</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body style="background: rgb(189, 255, 131);">
+
+<div class="container">
+  <div class="card">
+    <div class="card-body" style="
+    box-shadow: 10px 10px;
+">
+      <h5 class="card-title">Doctor Consult</h5>
+      
+      <form action="/cosultation_imp" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="doctorName">Doctor Name</label>
+          <input  type="text" class="form-control" id="doctorName" value="{{doctor.doctor_name}}" disabled>
+          <input name="doctorName" type="text" class="form-control" id="doctorName" value="{{doctor.doctor_name}}" style="visibility: hidden;" >
+         
+        </div>
+        
+        <div class="form-group">
+          <label for="hospitalName">Hospital Name</label>
+          <input name="hospitalName" type="text" class="form-control" id="hospitalName" value="{{doctor.hospital}}" disabled>
+          <input name="hospitalName" type="text" class="form-control" id="hospitalName" value="{{doctor.hospital}}"  style="visibility: hidden;" >
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+          <input type="text" name="doctorid" class="form-control" id="doctorName" value="{{doctor.id}}" style="visibility: hidden;">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Consult This Doctor</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

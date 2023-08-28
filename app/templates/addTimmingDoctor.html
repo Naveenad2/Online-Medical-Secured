@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Card</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body style="background: rgb(189, 255, 131);">
+
+<div class="container">
+  <div class="card">
+    <div class="card-body" style="
+    box-shadow: 10px 10px;
+">
+      <h5 class="card-title">Doctor Consult</h5>
+      
+      <form action="/addTimmingDoctorImplementation" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="doctorName">Add timming</label>
+          <input name="timming"  type="text" class="form-control" id="doctorName"  >
+          <input name="pa_id"  type="text" class="form-control" id="doctorName" value="{{id}}" style="visibility: hidden;">
+
+         
+         
+        </div>
+        
+        
+        
+        <button type="submit" class="btn btn-primary">Consult This Doctor</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

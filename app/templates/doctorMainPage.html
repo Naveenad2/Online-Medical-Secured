@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: #fff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            flex: 1;
+        }
+        
+        .shift-card {
+            flex: 1;
+            background-color: #f0f0f0;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+            color: #007bff;
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        th {
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        td {
+            padding: 5px 0;
+        }
+    </style>
+    <div class="container">
+        <div style="
+        box-shadow: 5px 8px 0px 0px;
+    " class="card profile-card">
+            <h2>Doctor Profile</h2>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>{{user.doctor_name}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{user.email}}</td>
+                </tr>
+        
+                <tr>
+                    <th>Age:</th>
+                    <td>{{user.age}}</td>
+                </tr>
+                <tr>
+                    <th>Qualification:</th>
+                    <td>{{user.qualification}}</td>
+                </tr>
+                <tr>
+                    <th>Hospital:</th>
+                    <td>{{user.hospital}}</td>
+                </tr>
+                <tr>
+                    <th>phone Number:</th>
+                    <td>{{user.phoneno}}</td>
+                </tr>
+            </table>
+
+            <a href="/editDoctor"><button>Edit</button></a>
+        </div>
+        
+        <div style="
+        box-shadow: 5px 8px 0px 0px;
+    " class="card shift-card">
+            <h2> Requested Consultation</h2>
+
+            {% for data in consult %}
+            <table>
+                <tr>
+                  Patient: {{data.Patient.patient_name}}
+                    <th>{{data.assainged_time}}:</th>
+                    
+                    <td><a href="/addTimmingDoctor/{{data.Patient.id}}"><button>Add timming</button></a></td>
+                </tr>
+               
+            </table> 
+            {% endfor %}
+           
+        </div>
+       
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Card</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body style="background: rgb(189, 255, 131);">
+
+<div class="container">
+  <div class="card">
+    <div class="card-body" style="
+    box-shadow: 10px 10px;
+">
+      <h5 class="card-title">Doctor Card</h5>
+      
+      <form>
+        <div class="form-group">
+          <label for="doctorName">Doctor Name</label>
+          <input type="text" class="form-control" id="doctorName" placeholder="Enter doctor's name">
+        </div>
+        
+        <div class="form-group">
+          <label for="hospitalName">Hospital Name</label>
+          <input type="text" class="form-control" id="hospitalName" placeholder="Enter hospital name">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Consult This Doctor</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
